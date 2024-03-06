@@ -1,0 +1,20 @@
+
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:13306/testdb?autoReconnect=true&tinyInt1isBit=false&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+
+
+---
+
+spring:
+  profiles:
+    active: ci
+  datasource:
+    url: jdbc:mysql://mysql:3306/testdb?autoReconnect=true&tinyInt1isBit=false&useSSL=false&allowPublicKeyRetrieval=true
