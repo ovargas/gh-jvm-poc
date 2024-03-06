@@ -22,8 +22,8 @@ jobs:
 
       - name: Copy gradle setting files
         env:
-          GRADLE_SETTINGS: ${{ secrets.GRADLE_SETTINGS }}
-          GRADLE_PROPERTIES: ${{ secrets.GRADLE_PROPERTIES }}
+          GRADLE_SETTINGS: ${{ variables.GRADLE_SETTINGS }}
+          GRADLE_PROPERTIES: ${{ variables.GRADLE_PROPERTIES }}
         run: |
           export GRADLE_USER_HOME=~/.gradle
           mkdir -p $GRADLE_USER_HOME
