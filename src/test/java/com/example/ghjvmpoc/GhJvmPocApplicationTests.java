@@ -1,0 +1,13 @@
+package com.example.ghjvmpoc;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class GhJvmPocApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}
