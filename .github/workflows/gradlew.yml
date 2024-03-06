@@ -31,6 +31,7 @@ jobs:
           echo ${GRADLE_PROPERTIES} >> $GRADLE_USER_HOME/gradle.properties
           cat $GRADLE_USER_HOME/init.gradle
           cat $GRADLE_USER_HOME/gradle.properties
+        shell: bash
 
       - name: Build with Gradle
         run: ./gradlew build
