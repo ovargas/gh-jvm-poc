@@ -20,6 +20,16 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
 
+      - name: Copy gradle setting files
+        env:
+          GRADLE_SETTINGS: ${{ secrets.GRADLE_SETTINGS }}
+          GRADLE_PROPERTIES: ${{ secrets.GRADLE_PROPERTIES }}
+        run: |
+          export GRADLE_USER_HOME=~/.gradle
+          mkdir -p $GRADLE_USER_HOME
+          echo ${GRADLE_SETTINGS} > $GRADLE_USER_HOME/init.gradle
+          echo ${GRADLE_PROPERTIES} > $GRADLE_USER_HOME/gradle.properties
+
       - name: Build with Gradle
         run: ./gradlew build
 
